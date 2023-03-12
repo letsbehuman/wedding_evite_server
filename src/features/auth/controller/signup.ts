@@ -36,10 +36,9 @@ export class SignUp {
             password
         });
         const userData: IUserDocument = SignUp.prototype.userData(authData, userObjectId);
-        console.log(userData);
         //** Adding to db */
         await authService.createAuthUser(authData);
-        // omit(userData, ['uId', 'username', 'password', 'email']);
+        omit(userData, ['uId', 'username', 'password', 'email']);
         await userService.addUserData(userData);
 
         const userJwt: string = SignUp.prototype.signupToken(authData, userObjectId);
@@ -84,15 +83,19 @@ export class SignUp {
             password,
             email,
             event: {
+                title: '',
                 nameOne: '',
                 nameTwo: '',
+                date: '',
+                time: '',
                 contactOne: '',
                 contactTwo: '',
                 contactThree: '',
                 locationOne: '',
                 locationTwo: '',
                 locationThree: '',
-                message: ''
+                message: '',
+                createdAt: ''
             }
         } as unknown as IUserDocument;
     }

@@ -18,7 +18,6 @@ export class SignIn {
         if (!existingUser) {
             throw new BadRequestError('Invalid credentials');
         }
-
         const passwordsMatch: boolean = await existingUser.comparePassword(password);
         if (!passwordsMatch) {
             throw new BadRequestError('Invalid credentials');

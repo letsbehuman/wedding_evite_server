@@ -1,3 +1,4 @@
+import { authMiddleware } from './../../../globals/helpers/auth-middleware';
 import express, { Router } from 'express';
 import { Create } from '../controller/add-event';
 
@@ -8,7 +9,7 @@ class EventRoutes {
     }
 
     public routes(): Router {
-        this.router.post('/event', Create.prototype.event);
+        this.router.post('/event', authMiddleware.checkAuthentication, Create.prototype.event);
 
         return this.router;
     }

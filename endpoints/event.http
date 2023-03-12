@@ -8,16 +8,16 @@ Accept: application/json
 withCredentials: true
 
 {
-    "title":"",
+    "title":"boda",
     "nameOne":"Blanca",
     "nameTwo":"Pam",
     "date":"11/11/2023",
     "time":"14:00",
-    "locationOne":"fiesta",
-    "locationTwo":"",
-    "locationThree":"",
     "contactOne":"pancho",
     "contactTwo":"",
     "contactThree":"",
+    "locationOne":"fiesta",
+    "locationTwo":"",
+    "locationThree":"",
     "message":"1234"
 }

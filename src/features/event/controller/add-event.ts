@@ -26,6 +26,7 @@ export class Create {
         const eventObjectId: ObjectId = new ObjectId();
         const createdEvent: IEventDocument = {
             _id: eventObjectId,
+            userId: req.currentUser!.userId,
             title,
             nameOne,
             nameTwo,
@@ -37,7 +38,6 @@ export class Create {
             contactOne,
             contactTwo,
             contactThree,
-
             message,
             createdAt: new Date()
         } as IEventDocument;

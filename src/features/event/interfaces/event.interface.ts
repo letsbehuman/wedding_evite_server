@@ -1,9 +1,9 @@
-import { ObjectId } from 'mongodb';
-import { Document } from 'mongoose';
+import mongoose, { Document } from 'mongoose';
 
 export interface IEventDocument extends Document {
-    _id?: string | ObjectId;
-    title: string;
+    _id?: string | mongoose.Types.ObjectId;
+    userId: string;
+    title?: string;
     nameOne: string;
     nameTwo: string;
     date: string;

@@ -24,6 +24,7 @@ class EventService {
     private aggregateProject() {
         return {
             _id: 1,
+
             title: 1,
             nameOne: 1,
             nameTwo: 1,
