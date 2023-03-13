@@ -1,5 +1,6 @@
-import { eventRoutes } from './features/event/routes/eventRoutes';
-import { authRoutes } from './features/auth/routes/authRoutes';
+import { guestListRoutes } from '@guestList/routes/guestListRoutes';
+import { eventRoutes } from '@event/routes/eventRoutes';
+import { authRoutes } from '@auth/routes/authRoutes';
 import { Application } from 'express';
 import { authMiddleware } from '@globals/helpers/auth-middleware';
 import { currentUserRoutes } from '@auth/routes/currentRoutes';
@@ -13,6 +14,7 @@ export default (app: Application) => {
 
         app.use(BASE_PATH, authMiddleware.verifyUser, eventRoutes.routes());
         app.use(BASE_PATH, authMiddleware.verifyUser, currentUserRoutes.routes());
+        app.use(BASE_PATH, authMiddleware.verifyUser, guestListRoutes.routes());
     };
 
     routes();

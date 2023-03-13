@@ -1,4 +1,4 @@
-import { SignUp } from '../controller/signup';
+import { SignUp } from '@auth/controller/signup';
 import express, { Router } from 'express';
 import { SignIn } from '@auth/controller/signin';
 import { SignOut } from '@auth/controller/signout';

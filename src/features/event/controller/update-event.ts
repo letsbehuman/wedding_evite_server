@@ -1,6 +1,6 @@
-import { IEventDocument } from './../interfaces/event.interface';
+import { IEventDocument } from '@event/interfaces/event.interface';
 import { joiValidation } from '@globals/decorators/joi-validation.decorators';
-import { eventSchema } from '../schemas/event.schema';
+import { eventSchema } from '@event/schemas/event.schema';
 import { Request, Response } from 'express';
 import HTTP_STATUS from 'http-status-codes';
 import { eventService } from '@service/db/event.service';

@@ -1,0 +1,27 @@
+@baseUrl = http://localhost:9090
+@urlPath = api/v1
+
+####
+POST {{baseUrl}}/{{urlPath}}/event/guest
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+    "name":"juan",
+    "surname":"sanchez",
+    "extraGuestPermission": true
+}
+
+
+####
+DELETE {{baseUrl}}/{{urlPath}}/event/guest/640f52f5999d65a91625eada
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+####
+GET {{baseUrl}}/{{urlPath}}/event/guest/list
+Content-Type: application/json
+Accept: application/json
+withCredentials: true

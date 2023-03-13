@@ -3,7 +3,6 @@ import { config } from './config/config';
 import Logger from 'bunyan';
 
 const log: Logger = config.createLogger('setupDatabase'); //"database" will indentify where the log is coming from
-
 //when you use a annonymous function you can use it with any name
 export default () => {
     const connect = () => {

@@ -1,4 +1,4 @@
-import {  IEventContent } from './../../event/interfaces/event.interface';
+import { IEventDocument } from '@event/interfaces/event.interface';
 import mongoose, { Document } from 'mongoose';
 import { ObjectId } from 'mongodb';
 
@@ -8,8 +8,8 @@ export interface IUserDocument extends Document {
     username?:string;
     password?:string;
     email?:string;
-    uId?:string;
-    event:IEventContent
+    date:string;
+    guestCount:number;
   
 }
 

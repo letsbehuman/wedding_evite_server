@@ -1,9 +1,9 @@
-import { authMiddleware } from './../../../globals/helpers/auth-middleware';
+import { authMiddleware } from '@globals/helpers/auth-middleware';
 import express, { Router } from 'express';
-import { Create } from '../controller/add-event';
-import { GetEvent } from '../controller/get-event';
-import { Delete } from '../controller/delete-event';
-import { Update } from '../controller/update-event';
+import { Create } from '@event/controller/add-event';
+import { GetEvent } from '@event/controller/get-event';
+import { Delete } from '@event/controller/delete-event';
+import { Update } from '@event/controller/update-event';
 
 class EventRoutes {
     private router: Router;

@@ -1,7 +1,6 @@
-import { IEventContent, IEventDocument } from './../interfaces/event.interface';
+import { IEventDocument } from '@event/interfaces/event.interface';
 import { Request, Response } from 'express';
 import HTTP_STATUS from 'http-status-codes';
-import mongoose from 'mongoose';
 import { eventService } from '@service/db/event.service';
 
 export class GetEvent {

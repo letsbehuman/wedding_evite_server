@@ -17,6 +17,7 @@ export interface IEventDocument extends Document {
     locationThree?: string;
     message?: string;
     createdAt?: Date;
+    guestCount: number;
 }
 //** We are not using this interface at the moment */
 export interface IEventContent {
@@ -59,5 +60,5 @@ export interface IQueryDeleted {
 
 export interface IQueryEvent {
     _id?: string | ObjectId;
-    postId?: string | ObjectId;
+    eventId?: string | ObjectId;
 }

@@ -1,5 +1,4 @@
-import { IContact } from './../../event/interfaces/event.interface';
-import { IUserDocument } from './../../user/interfaces/user.interface';
+import { IUserDocument } from '@user/interfaces/user.interface';
 import { userService } from '@service/db/user.service';
 import { config } from '@root/config/config';
 import { Request, Response } from 'express';
@@ -82,21 +81,8 @@ export class SignUp {
             username: Helpers.firstLetterUppercase(username),
             password,
             email,
-            event: {
-                title: '',
-                nameOne: '',
-                nameTwo: '',
-                date: '',
-                time: '',
-                contactOne: '',
-                contactTwo: '',
-                contactThree: '',
-                locationOne: '',
-                locationTwo: '',
-                locationThree: '',
-                message: '',
-                createdAt: ''
-            }
+            date: '',
+            guestCount: 0
         } as unknown as IUserDocument;
     }
 }
