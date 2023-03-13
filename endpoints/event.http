@@ -21,3 +21,36 @@ withCredentials: true
     "locationThree":"",
     "message":"1234"
 }
+
+####
+GET {{baseUrl}}/{{urlPath}}/event/640dda7dea0e41c33be19242
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+####
+DELETE {{baseUrl}}/{{urlPath}}/event/640e006dc1e2a9712252d1c4
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+####
+PUT {{baseUrl}}/{{urlPath}}/event/640e006dc1e2a9712252d1c4
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+    "title":"boda",
+    "nameOne":"Blanca",
+    "nameTwo":"Pam",
+    "date":"11/11/2023",
+    "time":"14:00",
+    "contactOne":"Juan",
+    "contactTwo":"Maria",
+    "contactThree":"",
+    "locationOne":"fiesta",
+    "locationTwo":"Ceremonia religiosa",
+    "locationThree":"",
+    "message":"1234"
+}

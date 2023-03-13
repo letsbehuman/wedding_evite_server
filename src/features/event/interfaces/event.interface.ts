@@ -1,4 +1,5 @@
 import mongoose, { Document } from 'mongoose';
+import { ObjectId } from 'mongodb';
 
 export interface IEventDocument extends Document {
     _id?: string | mongoose.Types.ObjectId;
@@ -54,4 +55,9 @@ export interface IQueryComplete {
 
 export interface IQueryDeleted {
     deletedCount?: number;
+}
+
+export interface IQueryEvent {
+    _id?: string | ObjectId;
+    postId?: string | ObjectId;
 }

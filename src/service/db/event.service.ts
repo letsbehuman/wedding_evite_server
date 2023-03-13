@@ -1,3 +1,6 @@
+import { Helpers } from './../../globals/helpers/helpers';
+import { AuthModel } from '@auth/models/auth.model';
+import { IAuthDocument } from './../../features/auth/interfaces/auth.interface';
 import {
     IEventDocument,
     IQueryComplete,
@@ -10,6 +13,20 @@ import mongoose, { Query, UpdateQuery } from 'mongoose';
 class EventService {
     public async addEventToDB(createdEvent: IEventDocument): Promise<void> {
         await EventModel.create(createdEvent);
+    }
+
+    public async getEvent(userId: string): Promise<IEventDocument> {
+        const event: IEventDocument = (await EventModel.findOne({
+            userId: userId
+        }).exec()) as IEventDocument;
+        return event;
+    }
+
+    public async getEventByUsername(userId: string): Promise<IEventDocument[]> {
+        const events: IEventDocument[] = await EventModel.aggregate([
+            { $match: { _id: new mongoose.Types.ObjectId(userId) } } //here userId has to be a mongodb object id
+        ]);
+        return events;
     }
 
     public async getEventById(userId: string): Promise<IEventDocument> {
@@ -41,7 +58,7 @@ class EventService {
             createdAt: '$eventId.createdAt'
         };
     }
-    public async deleteEvent(eventId: string, userId: string): Promise<void> {
+    public async deleteEvent(eventId: string): Promise<void> {
         const deleteEvent: Query<IQueryComplete & IQueryDeleted, IEventDocument> =
             EventModel.deleteOne({ _id: eventId });
         await Promise.all([deleteEvent]);
