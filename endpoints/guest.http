@@ -2,17 +2,32 @@
 @urlPath = api/v1
 
 ####
-POST {{baseUrl}}/{{urlPath}}/event/guest
+POST {{baseUrl}}/{{urlPath}}/event/confirmation/640f4343dcc1e4ceaeb1e248/6410ae96a685d7f324d93837
 Content-Type: application/json
 Accept: application/json
 withCredentials: true
 
 {
-    "name":"juan",
-    "surname":"sanchez",
-    "extraGuestPermission": true
+    "guests": [{
+        "name":"jorge",
+        "surname":"Rodriguez",
+        "status":true,
+        "menu":"vegetariano"
+    },
+    {
+        "name":"Ziska",
+        "surname":"Hammerl",
+        "status":true,   
+        "menu":"meat"
+    }, 
+    {
+        "name":"Lotti",
+        "surname":"Rodriguez",
+        "status":true,   
+        "menu":"meat"
+    }
+]
 }
-
 
 ####
 DELETE {{baseUrl}}/{{urlPath}}/event/guest/640f52f5999d65a91625eada

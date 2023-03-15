@@ -11,7 +11,7 @@ class GuestListRoutes {
     }
     public routes(): Router {
         this.router.post(
-            '/event/guest',
+            '/event/confirmation/:eventId/:familyId',
             authMiddleware.checkAuthentication,
             AddGuest.prototype.guest
         );

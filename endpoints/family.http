@@ -1,0 +1,20 @@
+@baseUrl = http://localhost:9090
+@urlPath = api/v1
+
+####
+POST {{baseUrl}}/{{urlPath}}/event/family
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+    "guests": [{
+        "name":"jorge",
+        "surname":"Rodriguez"
+    }, 
+     {
+        "name":"ziska",
+        "surname":""
+    }],
+    "extraGuestPermission":true
+}

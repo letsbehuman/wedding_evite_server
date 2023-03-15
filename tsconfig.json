@@ -28,6 +28,7 @@
             "@user/*": ["src/features/user/*"],
             "@event/*": ["src/features/event/*"],
             "@guestList/*": ["src/features/guestList/*"],
+            "@familyGuest/*": ["src/features/familyGuest/*"],
             "@globals/*": ["src/globals/*"],
             "@service/*": ["src/service/*"],
 

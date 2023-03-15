@@ -1,3 +1,4 @@
+import { familyGuestListRoutes } from '@familyGuest/routes/familyGuestRoutes';
 import { guestListRoutes } from '@guestList/routes/guestListRoutes';
 import { eventRoutes } from '@event/routes/eventRoutes';
 import { authRoutes } from '@auth/routes/authRoutes';
@@ -15,6 +16,7 @@ export default (app: Application) => {
         app.use(BASE_PATH, authMiddleware.verifyUser, eventRoutes.routes());
         app.use(BASE_PATH, authMiddleware.verifyUser, currentUserRoutes.routes());
         app.use(BASE_PATH, authMiddleware.verifyUser, guestListRoutes.routes());
+        app.use(BASE_PATH, authMiddleware.verifyUser, familyGuestListRoutes.routes());
     };
 
     routes();

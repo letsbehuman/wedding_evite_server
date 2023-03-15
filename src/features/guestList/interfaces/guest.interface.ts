@@ -3,11 +3,12 @@ import { Document } from 'mongoose';
 
 export interface IGuestDocument extends Document {
     _id?: string | ObjectId;
-    userId: string;
+    eventId: string;
+    familyId: string | ObjectId;
     name: string;
     surname?: string;
-    extraGuestPermission: boolean;
     menu: string;
+    status: boolean;
 }
 
 export interface IExtraGuestDocument extends Document {
@@ -16,6 +17,8 @@ export interface IExtraGuestDocument extends Document {
     familyId: string;
     name: string;
     surname: string;
+    menu: string;
+    status: boolean;
 }
 export interface IQueryComplete {
     ok?: number;
