@@ -18,21 +18,38 @@ class GuestListService {
         try {
             const { familyId } = guestData;
             const guest: Promise<IGuestDocument> = GuestModel.create(guestData);
-            const familyConfirm: UpdateQuery<IFamilyDocument> = FamilyGuestModel.updateOne(
+            const familyConfirm: UpdateQuery<IFamilyDocument> = FamilyGuestModel.findOneAndUpdate(
                 { _id: familyId },
                 { isConfirmed: true },
                 { new: true }
             );
-            const event: UpdateQuery<IEventDocument> = EventModel.updateOne(
-                { _id: eventId },
-                { $inc: { guestCount: 1 } }
-            );
-            await Promise.all([guest, familyConfirm, event]);
+            if (guestData.status === true) {
+                await EventModel.updateOne({ _id: eventId }, { $inc: { guestCount: 1 } });
+            }
+            await Promise.all([guest, familyConfirm]);
         } catch (error) {
             console.error('An error occurred while adding guest to DB:', error);
 
             throw error;
         }
+    }
+
+    public async updateGuest(guestDataUpdated: IGuestDocument, guestId: string): Promise<void> {
+        const guestUpdated: UpdateQuery<IGuestDocument> = GuestModel.updateOne(
+            { _id: guestId },
+            { $set: guestDataUpdated }
+        );
+        if (guestDataUpdated.status === true) {
+            await EventModel.updateOne(
+                { _id: guestDataUpdated.eventId },
+                { $inc: { guestCount: 1 } }
+            );
+        }
+        if (guestDataUpdated.status === false) {
+            await EventModel.updateOne({ _id: guestId }, { $inc: { guestCount: -1 } });
+        }
+
+        await Promise.all([guestUpdated]);
     }
 
     public async deleteFromDB(guestId: string, userId: string): Promise<void> {

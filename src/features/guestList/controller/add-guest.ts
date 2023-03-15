@@ -25,8 +25,8 @@ export class AddGuest {
             } as IGuestDocument;
             if (guest.status === true) {
                 guestsConfirmation.push(guest.name);
-                await guestListService.addGuestToDB(guestData, eventId);
             }
+            await guestListService.addGuestToDB(guestData, eventId);
         }
         res.status(HTTP_STATUS.OK).json({
             message: `${guestsConfirmation} is comming to the event`

@@ -2,7 +2,7 @@
 @urlPath = api/v1
 
 ####
-POST {{baseUrl}}/{{urlPath}}/event/confirmation/640f4343dcc1e4ceaeb1e248/6410ae96a685d7f324d93837
+POST {{baseUrl}}/{{urlPath}}/event/confirmation/640f4343dcc1e4ceaeb1e248/6410bed1042d867465cb1fae
 Content-Type: application/json
 Accept: application/json
 withCredentials: true
@@ -11,7 +11,7 @@ withCredentials: true
     "guests": [{
         "name":"jorge",
         "surname":"Rodriguez",
-        "status":true,
+        "status":false,
         "menu":"vegetariano"
     },
     {
@@ -25,6 +25,37 @@ withCredentials: true
         "surname":"Rodriguez",
         "status":true,   
         "menu":"meat"
+    }
+]
+}
+
+####
+PUT {{baseUrl}}/{{urlPath}}/event/confirmation/640f4343dcc1e4ceaeb1e248/6410bed1042d867465cb1fae
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+    "guests": [{
+        "name":"jorge",
+        "surname":"Rodriguez",
+        "status":true,
+        "menu":"vegetariano",
+        "_id":"64121b330a8a1692e72efb60"
+    },
+    {
+        "name":"Ziska",
+        "surname":"Hammerl",
+        "status":true,   
+        "menu":"vegetariano",
+        "_id":"64121b330a8a1692e72efb65"
+    }, 
+    {
+        "name":"Lotti",
+        "surname":"Rodriguez",
+        "status":true,   
+        "menu":"vegetariano",
+        "_id":"64121b330a8a1692e72efb6a"
     }
 ]
 }

@@ -11,15 +11,6 @@ export interface IGuestDocument extends Document {
     status: boolean;
 }
 
-export interface IExtraGuestDocument extends Document {
-    _id?: string | ObjectId;
-    userId: string;
-    familyId: string;
-    name: string;
-    surname: string;
-    menu: string;
-    status: boolean;
-}
 export interface IQueryComplete {
     ok?: number;
     n?: number;

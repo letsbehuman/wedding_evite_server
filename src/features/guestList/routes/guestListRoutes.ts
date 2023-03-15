@@ -1,3 +1,4 @@
+import { UpdateGuest } from '@guestList/controller/update-guest';
 import { authMiddleware } from '@globals/helpers/auth-middleware';
 import express, { Router } from 'express';
 import { AddGuest } from '@guestList/controller/add-guest';
@@ -25,6 +26,11 @@ class GuestListRoutes {
             '/event/guest/list',
             authMiddleware.checkAuthentication,
             GetGuests.prototype.guests
+        );
+        this.router.put(
+            '/event/confirmation/:eventId/:familyId',
+            authMiddleware.checkAuthentication,
+            UpdateGuest.prototype.guest
         );
 
         return this.router;
