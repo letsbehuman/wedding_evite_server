@@ -16,7 +16,7 @@ class EventRoutes {
 
         this.router.get(
             '/event/:userId',
-            authMiddleware.checkAuthentication,
+
             GetEvent.prototype.event
         );
         this.router.delete(

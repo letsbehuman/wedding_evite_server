@@ -82,7 +82,8 @@ export class SignUp {
             password,
             email,
             date: '',
-            guestCount: 0
+            guestCount: 0,
+            hasEvent: false
         } as unknown as IUserDocument;
     }
 }

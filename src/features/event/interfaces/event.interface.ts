@@ -9,33 +9,21 @@ export interface IEventDocument extends Document {
     nameTwo: string;
     date: string;
     time: string;
-    contactOne?: string;
-    contactTwo?: string;
-    contactThree?: string;
-    locationOne: string;
-    locationTwo?: string;
-    locationThree?: string;
+    contactOne?: IContact;
+    contactTwo?: IContact;
+    contactThree?: IContact;
+    locationOne: ILocation;
+    locationTwo?: ILocation;
+    locationThree?: ILocation;
     message?: string;
     createdAt?: Date;
     guestCount: number;
 }
-//** We are not using this interface at the moment */
-export interface IEventContent {
-    nameOne: string;
-    nameTwo: string;
-    contactOne?: IContact | '';
-    contactTwo?: IContact | '';
-    contactThree?: IContact | '';
-    locationOne: ILocation | '';
-    locationTwo?: ILocation | '';
-    locationThree?: ILocation | '';
-    message: string;
-}
 
 export interface ILocation {
-    id: string;
+    id?: string;
     title: string;
-    name: string;
+    name?: string;
     image?: string;
     date: string;
     time: string;
@@ -43,7 +31,7 @@ export interface ILocation {
 }
 
 export interface IContact {
-    id: string;
+    id?: string;
     title?: string;
     name: string;
     phone: string;

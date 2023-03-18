@@ -38,7 +38,8 @@ class UserService {
             uId: '$authId.uId',
             email: '$authId.email',
             createdAt: '$authId.createdAt',
-            event: 1
+            event: 1,
+            hasEvent: 1
         };
     }
 }

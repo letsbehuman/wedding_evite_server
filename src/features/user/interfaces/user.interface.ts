@@ -10,8 +10,8 @@ export interface IUserDocument extends Document {
     email?:string;
     date:string;
     guestCount:number;
-  
-}
+    hasEvent:boolean;
+  }
 
 export interface IResetPasswordParams {
     username: string;

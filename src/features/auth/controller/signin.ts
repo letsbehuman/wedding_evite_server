@@ -28,7 +28,8 @@ export class SignIn {
                 userId: user._id,
                 uId: existingUser.uId,
                 email: existingUser.email,
-                username: existingUser.username
+                username: existingUser.username,
+                hasEvent: user.hasEvent
             },
             config.JWT_TOKEN!
         );
@@ -39,7 +40,8 @@ export class SignIn {
             username: existingUser!.username,
             email: existingUser!.email,
             uId: existingUser!.uId,
-            createdAt: existingUser!.createdAt
+            createdAt: existingUser!.createdAt,
+            hasEvent: existingUser!.hasEvent
         } as unknown as IUserDocument;
 
         res.status(HTTP_STATUS.OK).json({

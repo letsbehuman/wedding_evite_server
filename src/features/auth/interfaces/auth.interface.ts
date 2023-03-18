@@ -16,6 +16,7 @@ export interface AuthPayload {
     email: string;
     username: string;
     iat?: number;
+    hasEvent: boolean;
 }
 
 export interface IAuthDocument extends Document {
@@ -24,6 +25,7 @@ export interface IAuthDocument extends Document {
     username: string;
     email: string;
     password?: string;
+    hasEvent: boolean;
     createdAt: Date;
     comparePassword(password: string): Promise<boolean>;
     hashPassword(password: string): Promise<string>;

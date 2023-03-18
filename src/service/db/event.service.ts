@@ -14,7 +14,7 @@ class EventService {
         const event: Promise<IEventDocument> = EventModel.create(createdEvent);
         const user: UpdateQuery<IUserDocument> = UserModel.updateOne(
             { _id: userId },
-            { date: date }
+            { date: date, hasEvent: true }
         );
 
         await Promise.all([event, user]);

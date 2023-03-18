@@ -13,17 +13,44 @@ withCredentials: true
     "nameTwo":"Pam",
     "date":"11/11/2023",
     "time":"14:00",
-    "contactOne":"pancho",
-    "contactTwo":"",
-    "contactThree":"",
-    "locationOne":"fiesta",
-    "locationTwo":"",
-    "locationThree":"",
+    "contactOne":
+        {
+        "title":"Dama de honor",
+        "name":"Erika",
+        "phone":"477 117 4589",
+        "inChargeOf":"Logistica"
+        },
+    "contactTwo":
+       {
+        "title":"Mejor amigo",
+        "name":"Juan",
+        "phone":"477 117 4589",
+        "inChargeOf":""
+        },
+    "contactThree":{},
+    "locationOne":
+       {
+        "title":"Ceremonia religiosa",
+        "name":"Iglesia de la parroquia",
+        "image":"",
+        "date":"21/05/2023",
+        "time":"14:00",
+        "address":"Calle 50 Centro"
+        },
+    "locationTwo": {
+        "title":"Festejo",
+        "name":"",
+        "image":"",
+        "date":"21/05/2023",
+        "time":"17:00",
+        "address":"Calle 1250 Centro"
+        },
+    "locationThree":{},
     "message":"1234"
 }
 
 ####
-GET {{baseUrl}}/{{urlPath}}/event/640dda7dea0e41c33be19242
+GET {{baseUrl}}/{{urlPath}}/event/640f403ebab693c08cfd9ffe
 Content-Type: application/json
 Accept: application/json
 withCredentials: true
