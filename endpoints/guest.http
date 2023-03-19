@@ -1,8 +1,15 @@
 @baseUrl = http://localhost:9090
 @urlPath = api/v1
 
+
 ####
-POST {{baseUrl}}/{{urlPath}}/event/confirmation/640f4343dcc1e4ceaeb1e248/6410bed1042d867465cb1fae
+GET {{baseUrl}}/{{urlPath}}/event/guestlist/6415f542495ba3019fb9e5da
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+####
+POST {{baseUrl}}/{{urlPath}}/event/confirmation/6415f542495ba3019fb9e5da/6416030e316fa62b564936d2
 Content-Type: application/json
 Accept: application/json
 withCredentials: true
@@ -30,7 +37,7 @@ withCredentials: true
 }
 
 ####
-PUT {{baseUrl}}/{{urlPath}}/event/confirmation/640f4343dcc1e4ceaeb1e248/6410bed1042d867465cb1fae
+PUT {{baseUrl}}/{{urlPath}}/event/confirmation/6415f527495ba3019fb9e5d5/6415f8a97a09a68290251b3a
 Content-Type: application/json
 Accept: application/json
 withCredentials: true

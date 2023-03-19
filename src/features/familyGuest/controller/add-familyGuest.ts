@@ -11,9 +11,10 @@ export class addFamilyGuest {
     public async family(req: Request, res: Response): Promise<void> {
         const { guests, extraGuestPermission } = req.body;
         const familyObjectId: ObjectId = new ObjectId();
+        const { eventId } = req.params;
         const familyGuestData: IFamilyDocument = {
             _id: familyObjectId,
-            userId: req.currentUser?.userId,
+            eventId,
             guests,
             extraGuestPermission,
             isConfirmed: false

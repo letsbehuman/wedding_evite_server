@@ -15,7 +15,7 @@ class EventRoutes {
         this.router.post('/event', authMiddleware.checkAuthentication, Create.prototype.event);
 
         this.router.get(
-            '/event/:userId',
+            '/event/:eventId',
 
             GetEvent.prototype.event
         );

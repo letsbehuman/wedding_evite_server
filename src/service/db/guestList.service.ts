@@ -7,7 +7,7 @@ import {
     IGuestDocument,
     IQueryComplete,
     IQueryDeleted,
-    IQueryGuest
+    IQueryGuestList
 } from '@guestList/interfaces/guest.interface';
 import { GuestModel } from '@guestList/models/guestList.model';
 import mongoose, { Query, UpdateQuery } from 'mongoose';
@@ -23,15 +23,16 @@ class GuestListService {
                 { isConfirmed: true },
                 { new: true }
             );
-            if (guestData.status === true) {
-                await EventModel.updateOne({ _id: eventId }, { $inc: { guestCount: 1 } });
-            }
             await Promise.all([guest, familyConfirm]);
         } catch (error) {
             console.error('An error occurred while adding guest to DB:', error);
 
             throw error;
         }
+    }
+    public async getGuestCount(eventId: string): Promise<number> {
+        const count: number = await EventModel.find({ _id: eventId }).countDocuments();
+        return count;
     }
 
     public async updateGuest(guestDataUpdated: IGuestDocument, guestId: string): Promise<void> {
@@ -68,8 +69,9 @@ class GuestListService {
         await Promise.all([deletedGuest, user, event]);
     }
 
-    public async getGuestList(query: IQueryGuest): Promise<IGuestDocument[]> {
-        const guests: IGuestDocument[] = await GuestModel.aggregate([{ $match: query }]);
+    public async getGuestList(eventId: string): Promise<IGuestDocument[]> {
+        const guests: IGuestDocument[] = await GuestModel.find({ eventId: eventId, status: true });
+
         return guests;
     }
 

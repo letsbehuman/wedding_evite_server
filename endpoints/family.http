@@ -2,7 +2,7 @@
 @urlPath = api/v1
 
 ####
-POST {{baseUrl}}/{{urlPath}}/event/family
+POST {{baseUrl}}/{{urlPath}}/event/family/6415f542495ba3019fb9e5da
 Content-Type: application/json
 Accept: application/json
 withCredentials: true
@@ -18,3 +18,9 @@ withCredentials: true
     }],
     "extraGuestPermission":true
 }
+
+####
+GET {{baseUrl}}/{{urlPath}}/event/confirmation/6416030e316fa62b564936d2
+Content-Type: application/json
+Accept: application/json
+withCredentials: true

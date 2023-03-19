@@ -18,7 +18,7 @@ export interface IQueryComplete {
 export interface IQueryDeleted {
     deletedCount?: number;
 }
-export interface IQueryGuest {
+export interface IQueryGuestList {
     _id?: string | ObjectId;
-    guestId?: string | ObjectId;
+    eventId?: string | ObjectId;
 }

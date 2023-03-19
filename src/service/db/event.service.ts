@@ -20,9 +20,9 @@ class EventService {
         await Promise.all([event, user]);
     }
 
-    public async getEvent(userId: string): Promise<IEventDocument> {
+    public async getEvent(eventId: string): Promise<IEventDocument> {
         const event: IEventDocument = (await EventModel.findOne({
-            userId: userId
+            _id: eventId
         }).exec()) as IEventDocument;
         return event;
     }

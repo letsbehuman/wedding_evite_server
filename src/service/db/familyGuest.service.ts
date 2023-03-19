@@ -9,17 +9,21 @@ import { FamilyGuestModel } from '@familyGuest/models/familyGuest.model';
 
 class FamilyGuestService {
     public async addFamilyToDB(familyData: IFamilyDocument): Promise<void> {
-        const { userId } = familyData;
+        const { eventId } = familyData;
         const family: Promise<IFamilyDocument> = FamilyGuestModel.create(familyData);
-        const user: UpdateQuery<IUserDocument> = UserModel.updateOne(
-            { _id: userId },
-            { $inc: { guestCount: 1 } }
-        );
+
         const event: UpdateQuery<IEventDocument> = EventModel.updateOne(
-            { userId: userId },
+            { _id: eventId },
             { $inc: { guestCount: 1 } }
         );
-        await Promise.all([family, user, event]);
+        await Promise.all([family, event]);
+    }
+
+    public async getFamilyById(familyId: string): Promise<IFamilyDocument> {
+        const family: IFamilyDocument = (await FamilyGuestModel.findOne({
+            _id: familyId
+        }).exec()) as IFamilyDocument;
+        return family;
     }
 }
 

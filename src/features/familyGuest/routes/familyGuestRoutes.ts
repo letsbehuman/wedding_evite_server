@@ -1,4 +1,5 @@
 import { addFamilyGuest } from '@familyGuest/controller/add-familyGuest';
+import { GetFamilyGuests } from '@familyGuest/controller/get-familyGuest';
 import { authMiddleware } from '@globals/helpers/auth-middleware';
 import express, { Router } from 'express';
 
@@ -9,10 +10,12 @@ class FamilyGuestListRoutes {
     }
     public routes(): Router {
         this.router.post(
-            '/event/family/',
+            '/event/family/:eventId',
             authMiddleware.checkAuthentication,
             addFamilyGuest.prototype.family
         );
+        this.router.get('/event/confirmation/:familyId', GetFamilyGuests.prototype.familyInvite);
+
         return this.router;
     }
 }

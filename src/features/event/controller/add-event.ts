@@ -29,6 +29,7 @@ export class Create {
         if (req.currentUser!.hasEvent === true) {
             throw new BadRequestError('There is already an event for this user');
         }
+
         const createdEvent: IEventDocument = {
             _id: eventObjectId,
             userId: req.currentUser!.userId,

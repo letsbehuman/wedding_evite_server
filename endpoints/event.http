@@ -50,7 +50,7 @@ withCredentials: true
 }
 
 ####
-GET {{baseUrl}}/{{urlPath}}/event/640f403ebab693c08cfd9ffe
+GET {{baseUrl}}/{{urlPath}}/event/6415f542495ba3019fb9e5da
 Content-Type: application/json
 Accept: application/json
 withCredentials: true
