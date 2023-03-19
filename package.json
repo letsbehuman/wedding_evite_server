@@ -4,7 +4,7 @@
     "description": "",
     "main": "app.js",
     "scripts": {
-        "build": "rm -rf build/ && tsc",
+        "build": "tsc",
         "dev": "nodemon -r tsconfig-paths/register src/app.ts | bunyan"
     },
     "author": "",

@@ -6,8 +6,7 @@ import { IEventDocument } from '@event/interfaces/event.interface';
 import {
     IGuestDocument,
     IQueryComplete,
-    IQueryDeleted,
-    IQueryGuestList
+    IQueryDeleted
 } from '@guestList/interfaces/guest.interface';
 import { GuestModel } from '@guestList/models/guestList.model';
 import mongoose, { Query, UpdateQuery } from 'mongoose';

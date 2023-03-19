@@ -5,13 +5,13 @@ import { ObjectId } from 'mongodb';
 export interface IUserDocument extends Document {
     _id: string | ObjectId;
     authId: string | ObjectId;
-    username?:string;
-    password?:string;
-    email?:string;
-    date:string;
-    guestCount:number;
-    hasEvent:boolean;
-  }
+    username?: string;
+    password?: string;
+    email?: string;
+    date: string;
+    guestCount: number;
+    hasEvent: boolean;
+}
 
 export interface IResetPasswordParams {
     username: string;
@@ -20,9 +20,6 @@ export interface IResetPasswordParams {
     date: string;
 }
 
-
-
-
 export interface ISearchUser {
     _id: string;
     profilePicture: string;
@@ -30,22 +27,20 @@ export interface ISearchUser {
     email: string;
 }
 
-
-
 export interface ILogin {
     userId: string;
 }
 
 export interface IUserJobInfo {
     key?: string;
-    value?: string | 
+    value?: string;
 }
 
 export interface IUserJob {
     keyOne?: string;
     keyTwo?: string;
     key?: string;
-    value?: string |  IUserDocument;
+    value?: string | IUserDocument;
 }
 
 export interface IEmailJob {
