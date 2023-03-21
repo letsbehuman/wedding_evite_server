@@ -9,12 +9,8 @@ export interface IEventDocument extends Document {
     nameTwo: string;
     date: string;
     time: string;
-    contactOne?: IContact;
-    contactTwo?: IContact;
-    contactThree?: IContact;
-    locationOne: ILocation;
-    locationTwo?: ILocation;
-    locationThree?: ILocation;
+    contact: IContact[];
+    locations: ILocation[];
     message?: string;
     createdAt?: Date;
     guestCount: number;

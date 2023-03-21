@@ -13,6 +13,67 @@ withCredentials: true
     "nameTwo":"Pam",
     "date":"11/11/2023",
     "time":"14:00",
+    "contact":
+    [
+        {
+            "id":15648614,
+        "title":"Dama de honor",
+        "name":"Erika",
+        "phone":"477 117 4589",
+        "inChargeOf":"Logistica"
+        },
+       {
+        "id":15648624,
+        "title":"Mejor amigo",
+        "name":"Juan",
+        "phone":"477 117 4589",
+        "inChargeOf":""
+        }
+    ],
+    "locations":
+    [
+       {
+        "id":15648664,
+        "title":"Ceremonia religiosa",
+        "name":"Iglesia de la parroquia",
+        "image":"",
+        "date":"21/05/2023",
+        "time":"14:00",
+        "address":"Calle 50 Centro"
+        },
+  	    {"id":15648663,
+        "title":"Festejo",
+        "name":"",
+        "image":"",
+        "date":"21/05/2023",
+        "time":"17:00",
+        "address":"Calle 1250 Centro"
+        },
+        {
+            "id":15648662,
+        "title":"Festejo",
+        "name":"",
+        "image":"",
+        "date":"21/05/2023",
+        "time":"17:00",
+        "address":"Calle 1250 Centro"
+        }
+    ],
+    "message":"1234"
+}
+
+####
+POST {{baseUrl}}/{{urlPath}}/event
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+    "title":"boda",
+    "nameOne":"Blanca",
+    "nameTwo":"Pam",
+    "date":"11/11/2023",
+    "time":"14:00",
     "contactOne":
         {
         "title":"Dama de honor",
@@ -50,10 +111,11 @@ withCredentials: true
 }
 
 ####
-GET {{baseUrl}}/{{urlPath}}/event/6415f542495ba3019fb9e5da
+GET {{baseUrl}}/{{urlPath}}/event/641a0d14a68d25ed8e68bd31
 Content-Type: application/json
 Accept: application/json
 withCredentials: true
+
 
 ####
 DELETE {{baseUrl}}/{{urlPath}}/event/640f41b9cc0b3f8888a045ba

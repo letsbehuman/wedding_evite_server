@@ -14,11 +14,6 @@ class EventRoutes {
     public routes(): Router {
         this.router.post('/event', authMiddleware.checkAuthentication, Create.prototype.event);
 
-        this.router.get(
-            '/event/:eventId',
-
-            GetEvent.prototype.event
-        );
         this.router.delete(
             '/event/:eventId',
             authMiddleware.checkAuthentication,
@@ -30,6 +25,11 @@ class EventRoutes {
             Update.prototype.event
         );
 
+        return this.router;
+    }
+
+    public publicRoutes(): Router {
+        this.router.get('/event/:eventId', GetEvent.prototype.event);
         return this.router;
     }
 }

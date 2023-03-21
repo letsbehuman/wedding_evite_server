@@ -1,4 +1,3 @@
-import { IEventDocument } from '@event/interfaces/event.interface';
 import mongoose, { Document } from 'mongoose';
 import { ObjectId } from 'mongodb';
 

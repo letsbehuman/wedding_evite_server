@@ -6,12 +6,26 @@ const eventSchema: ObjectSchema = Joi.object().keys({
     nameTwo: Joi.string().required().messages({ 'string.empty': 'This field is required' }),
     date: Joi.string().required().messages({ 'string.empty': 'This field is required' }),
     time: Joi.string().required().messages({ 'string.empty': 'This field is required' }),
-    contactOne: Joi.object().optional().allow(null, ''),
-    contactTwo: Joi.object().optional().allow(null, ''),
-    contactThree: Joi.object().optional().allow(null, ''),
-    locationOne: Joi.object().required().messages({ 'object.empty': 'This field is required' }),
-    locationTwo: Joi.object().optional().allow(null, ''),
-    locationThree: Joi.object().optional().allow(null, ''),
+    contact: Joi.array().items(
+        Joi.object().keys({
+            id: Joi.number().optional().allow(null),
+            title: Joi.string().optional().allow(null, ''),
+            name: Joi.string().optional().allow(null, ''),
+            phone: Joi.string().optional().allow(null, ''),
+            inChargeOf: Joi.string().optional().allow(null, '')
+        })
+    ),
+    locations: Joi.array().items(
+        Joi.object().keys({
+            id: Joi.number().optional().allow(null),
+            title: Joi.string().optional().allow(null, ''),
+            name: Joi.string().optional().allow(null, ''),
+            image: Joi.string().optional().allow(null, ''),
+            date: Joi.string().optional().allow(null, ''),
+            time: Joi.string().optional().allow(null, ''),
+            address: Joi.string().optional().allow(null, '')
+        })
+    ),
     message: Joi.string().optional().allow(null, '')
 });
 

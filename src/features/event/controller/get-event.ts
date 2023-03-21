@@ -1,3 +1,4 @@
+import { IContact } from '@event/interfaces/event.interface';
 import { IEventDocument } from '@event/interfaces/event.interface';
 import { Request, Response } from 'express';
 import HTTP_STATUS from 'http-status-codes';

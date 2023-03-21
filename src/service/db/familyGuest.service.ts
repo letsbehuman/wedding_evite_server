@@ -1,9 +1,6 @@
 import { IFamilyDocument } from '@familyGuest/interfaces/familyGuest.interface';
-import { UserModel } from '@user/models/user.model';
 import { EventModel } from '@root/features/event/models/event.model';
-
 import mongoose, { Query, UpdateQuery } from 'mongoose';
-import { IUserDocument } from '@user/interfaces/user.interface';
 import { IEventDocument } from '@event/interfaces/event.interface';
 import { FamilyGuestModel } from '@familyGuest/models/familyGuest.model';
 

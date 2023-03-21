@@ -1,10 +1,11 @@
 import { UserModel } from '@user/models/user.model';
 import {
+    IContact,
     IEventDocument,
     IQueryComplete,
     IQueryDeleted
-} from '@root/features/event/interfaces/event.interface';
-import { EventModel } from '@root/features/event/models/event.model';
+} from '@event/interfaces/event.interface';
+import { EventModel } from '@event/models/event.model';
 import { IUserDocument } from '@user/interfaces/user.interface';
 import mongoose, { Query, UpdateQuery } from 'mongoose';
 

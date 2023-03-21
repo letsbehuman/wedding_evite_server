@@ -1,5 +1,5 @@
 import mongoose, { model, Model, Schema } from 'mongoose';
-import { IFamilyDocument } from '../interfaces/familyGuest.interface';
+import { IFamilyDocument } from '@familyGuest/interfaces/familyGuest.interface';
 
 const familyGuestSchema: Schema = new Schema({
     eventId: { type: mongoose.Schema.Types.ObjectId, ref: 'Event', index: true },

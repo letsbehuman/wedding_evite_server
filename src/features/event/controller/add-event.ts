@@ -10,25 +10,12 @@ import { eventService } from '@service/db/event.service';
 export class Create {
     @joiValidation(eventSchema)
     public async event(req: Request, res: Response): Promise<void> {
-        const {
-            title,
-            nameOne,
-            nameTwo,
-            date,
-            time,
-            locationOne,
-            locationTwo,
-            locationThree,
-            contactOne,
-            contactTwo,
-            contactThree,
-            message
-        } = req.body;
+        const { title, nameOne, nameTwo, date, time, locations, contact, message } = req.body;
         const eventObjectId: ObjectId = new ObjectId();
 
-        if (req.currentUser!.hasEvent === true) {
-            throw new BadRequestError('There is already an event for this user');
-        }
+        // if (req.currentUser!.hasEvent === true) {
+        //     throw new BadRequestError('There is already an event for this user');
+        // }
 
         const createdEvent: IEventDocument = {
             _id: eventObjectId,
@@ -38,12 +25,8 @@ export class Create {
             nameTwo,
             date,
             time,
-            locationOne,
-            locationTwo,
-            locationThree,
-            contactOne,
-            contactTwo,
-            contactThree,
+            locations,
+            contact,
             message,
             createdAt: new Date(),
             guestCount: 0

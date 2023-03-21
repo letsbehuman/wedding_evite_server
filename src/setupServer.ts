@@ -4,7 +4,7 @@ import cors from 'cors';
 import Logger from 'bunyan';
 import { config } from './config/config';
 import HTTP_STATUS from 'http-status-codes';
-import { CustomError, IErrorResponse } from './globals/helpers/error-handler';
+import { CustomError, IErrorResponse } from '@globals/helpers/error-handler';
 import applicationRoutes from './routes';
 import cookieSession from 'cookie-session';
 import helmet from 'helmet';

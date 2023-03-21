@@ -8,20 +8,7 @@ import { eventService } from '@service/db/event.service';
 export class Update {
     @joiValidation(eventSchema)
     public async event(req: Request, res: Response): Promise<void> {
-        const {
-            title,
-            nameOne,
-            nameTwo,
-            date,
-            time,
-            locationOne,
-            locationTwo,
-            locationThree,
-            contactOne,
-            contactTwo,
-            contactThree,
-            message
-        } = req.body;
+        const { title, nameOne, nameTwo, date, time, locations, contact, message } = req.body;
         const { eventId } = req.params;
         const updatedEvent: IEventDocument = {
             title,
@@ -29,12 +16,8 @@ export class Update {
             nameTwo,
             date,
             time,
-            locationOne,
-            locationTwo,
-            locationThree,
-            contactOne,
-            contactTwo,
-            contactThree,
+            locations,
+            contact,
             message
         } as IEventDocument;
 

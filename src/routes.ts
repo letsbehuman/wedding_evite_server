@@ -12,11 +12,12 @@ export default (app: Application) => {
     const routes = () => {
         app.use(BASE_PATH, authRoutes.routes());
         app.use(BASE_PATH, authRoutes.signoutRoute());
+        app.use(BASE_PATH, guestListRoutes.routes());
+        app.use(BASE_PATH, eventRoutes.publicRoutes());
 
         app.use(BASE_PATH, authMiddleware.verifyUser, eventRoutes.routes());
-        app.use(BASE_PATH, authMiddleware.verifyUser, currentUserRoutes.routes());
-        app.use(BASE_PATH, authMiddleware.verifyUser, guestListRoutes.routes());
         app.use(BASE_PATH, authMiddleware.verifyUser, familyGuestListRoutes.routes());
+        app.use(BASE_PATH, authMiddleware.verifyUser, currentUserRoutes.routes());
     };
 
     routes();
