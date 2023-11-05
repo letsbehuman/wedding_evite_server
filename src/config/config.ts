@@ -11,7 +11,7 @@ class Config {
     public CLIENT_URL: string | undefined;
     public PORT: string | undefined;
 
-    private readonly DEFAULT_DATABASE_URL = 'mongodb://localhost:27017/wedding-evite-api';
+        private readonly DEFAULT_DATABASE_URL = 'mongodb://localhost:27017/wedding-evite-api';
     constructor() {
         this.DATABASE_URL = process.env.DATABASE_URL || this.DEFAULT_DATABASE_URL;
         this.JWT_TOKEN = process.env.JWT_TOKEN || '1234';
@@ -28,7 +28,7 @@ class Config {
     public validateConfig(): void {
         for (const [key, value] of Object.entries(this)) {
             if (value === undefined) {
-                throw new Error(`Configutation ${key} is undefined.`);
+                throw new Error(`Configuration ${key} is undefined.`);
             }
         }
     }
