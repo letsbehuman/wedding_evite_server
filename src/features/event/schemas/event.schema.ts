@@ -26,7 +26,12 @@ const eventSchema: ObjectSchema = Joi.object().keys({
             address: Joi.string().optional().allow(null, '')
         })
     ),
-    message: Joi.string().optional().allow(null, '')
+    message: Joi.string().optional().allow(null, ''),
+    gifts: Joi.array().items(Joi.string().optional().allow(null, '')),
+    dressCode: Joi.string().optional().allow(null, ''),
+    childPolicy: Joi.boolean().optional().allow(null, ''),
+    image: Joi.string().optional().allow(null, ''),
+    menus: Joi.array().items(Joi.string().optional().allow(null, ''))
 });
 
 export { eventSchema };

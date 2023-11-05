@@ -1,0 +1,19 @@
+nav nombres de la pareja obj o []
+
+hero
+main info: names, date, location, picture
+
+details
+details of locations: id, title, image, name, date, ime, address
+
+extras
+gits(links), dressCode(string), childPolicy(boolean)
+
+contact
+list of contact: id, title, name, phone, inChargeOf
+
+RSVP
+guests[]:
+_id, name, surname, status, menuChoice, additionalGuest
+
+menu{}: menuOne(str), menuTwo(str)

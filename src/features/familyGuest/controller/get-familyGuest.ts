@@ -1,3 +1,4 @@
+import { guestListService } from '@service/db/guestList.service';
 import { familyGuestService } from '@service/db/familyGuest.service';
 import { Request, Response } from 'express';
 import HTTP_STATUS from 'http-status-codes';
@@ -7,5 +8,11 @@ export class GetFamilyGuests {
         const { eventId, familyId } = req.params;
         const family = await familyGuestService.getFamilyById(familyId);
         res.status(HTTP_STATUS.OK).json({ family });
+    }
+
+    public async allFamilies(req: Request, res: Response): Promise<void> {
+        const { eventId } = req.params;
+        const allFamilies = await guestListService.getGuestList(eventId);
+        res.status(HTTP_STATUS.OK).json({ allFamilies });
     }
 }

@@ -9,8 +9,87 @@ withCredentials: true
 
 {
     "title":"boda",
-    "nameOne":"Blanca",
-    "nameTwo":"Pam",
+    "nameOne":"Jorge",
+    "nameTwo":"Ziska",
+    "date":"29/02/2023",
+    "time":"14:00",
+    "contact":
+    [
+        {
+            "id":15648614,
+        "title":"Dama de honor",
+        "name":"Erika",
+        "phone":"477 117 4589",
+        "inChargeOf":"Logistica"
+        },
+       {
+        "id":15648624,
+        "title":"Mejor amigo",
+        "name":"Juan",
+        "phone":"477 117 4589",
+        "inChargeOf":""
+        }
+    ],
+    "locations":
+    [
+       {
+        "id":15648664,
+        "title":"Ceremonia religiosa",
+        "name":"Iglesia de la parroquia",
+        "image":"",
+        "date":"21/05/2023",
+        "time":"14:00",
+        "address":"Calle 50 Centro"
+        },
+  	    {"id":15648663,
+        "title":"Festejo",
+        "name":"",
+        "image":"",
+        "date":"21/05/2023",
+        "time":"17:00",
+        "address":"Calle 1250 Centro"
+        },
+        {
+            "id":15648662,
+        "title":"Festejo",
+        "name":"",
+        "image":"",
+        "date":"21/05/2023",
+        "time":"17:00",
+        "address":"Calle 1250 Centro"
+        }
+    ],
+    "message":"save the date",
+    "image":"image",
+    "menus":["vegetariano", "con carne"],
+    "gifts":["liverpool", "amazon wishlist"],
+    "childPolicy": false,
+    "dressCode": "Playero"
+}
+
+####
+GET {{baseUrl}}/{{urlPath}}/event/641a107e4cd2c302066e93af
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+
+####
+DELETE {{baseUrl}}/{{urlPath}}/event/641a107e4cd2c302066e93af
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+####
+PUT {{baseUrl}}/{{urlPath}}/event/654783efe5da298f89cff2c3
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+    "title":"boda",
+    "nameOne":"Jorge",
+    "nameTwo":"Yiska",
     "date":"11/11/2023",
     "time":"14:00",
     "contact":
@@ -59,87 +138,9 @@ withCredentials: true
         "address":"Calle 1250 Centro"
         }
     ],
-    "message":"1234"
-}
-
-####
-POST {{baseUrl}}/{{urlPath}}/event
-Content-Type: application/json
-Accept: application/json
-withCredentials: true
-
-{
-    "title":"boda",
-    "nameOne":"Blanca",
-    "nameTwo":"Pam",
-    "date":"11/11/2023",
-    "time":"14:00",
-    "contactOne":
-        {
-        "title":"Dama de honor",
-        "name":"Erika",
-        "phone":"477 117 4589",
-        "inChargeOf":"Logistica"
-        },
-    "contactTwo":
-       {
-        "title":"Mejor amigo",
-        "name":"Juan",
-        "phone":"477 117 4589",
-        "inChargeOf":""
-        },
-    "contactThree":{},
-    "locationOne":
-       {
-        "title":"Ceremonia religiosa",
-        "name":"Iglesia de la parroquia",
-        "image":"",
-        "date":"21/05/2023",
-        "time":"14:00",
-        "address":"Calle 50 Centro"
-        },
-    "locationTwo": {
-        "title":"Festejo",
-        "name":"",
-        "image":"",
-        "date":"21/05/2023",
-        "time":"17:00",
-        "address":"Calle 1250 Centro"
-        },
-    "locationThree":{},
-    "message":"1234"
-}
-
-####
-GET {{baseUrl}}/{{urlPath}}/event/641a0d14a68d25ed8e68bd31
-Content-Type: application/json
-Accept: application/json
-withCredentials: true
-
-
-####
-DELETE {{baseUrl}}/{{urlPath}}/event/640f41b9cc0b3f8888a045ba
-Content-Type: application/json
-Accept: application/json
-withCredentials: true
-
-####
-PUT {{baseUrl}}/{{urlPath}}/event/640f0604cb41cf5209f91e5b
-Content-Type: application/json
-Accept: application/json
-withCredentials: true
-
-{
-    "title":"boda",
-    "nameOne":"Blanca",
-    "nameTwo":"Pam",
-    "date":"11/11/2023",
-    "time":"14:00",
-    "contactOne":"Juan",
-    "contactTwo":"Maria",
-    "contactThree":"otromas",
-    "locationOne":"fiesta",
-    "locationTwo":"Ceremonia religiosa",
-    "locationThree":"",
-    "message":"1234"
+     "message":"save the date",
+    "image":"photo",
+    "gifts":["liverpool.com", "amazon/wishList.com"],
+    "dressCode":["formal"],
+    "childPolicy":false
 }

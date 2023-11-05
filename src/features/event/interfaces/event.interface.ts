@@ -12,6 +12,11 @@ export interface IEventDocument extends Document {
     contact: IContact[];
     locations: ILocation[];
     message?: string;
+    image: string;
+    menus: string[];
+    gifts: string[];
+    dressCode: string;
+    childPolicy: boolean;
     createdAt?: Date;
     guestCount: number;
 }

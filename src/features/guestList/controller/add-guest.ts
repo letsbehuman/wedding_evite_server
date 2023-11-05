@@ -15,12 +15,6 @@ export class AddGuest {
         const { guests } = req.body;
         const { familyId, eventId } = req.params;
 
-        const checkIsConfirm: IFamilyDocument = await familyGuestService.getFamilyById(familyId);
-        if (checkIsConfirm.isConfirmed) {
-            throw new BadRequestError(
-                'You have already confirm, get in contact to modify a request'
-            );
-        }
         let guestsConfirmation = [];
 
         for (let guest of guests) {
@@ -30,7 +24,7 @@ export class AddGuest {
                 eventId: eventId,
                 familyId: familyId,
                 name: guest.name,
-                surname: guest.suername,
+                surname: guest.surname,
                 menu: guest.menu,
                 status: guest.status
             } as IGuestDocument;

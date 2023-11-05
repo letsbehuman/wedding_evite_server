@@ -9,7 +9,7 @@ Accept: application/json
 withCredentials: true
 
 ####
-POST {{baseUrl}}/{{urlPath}}/event/confirmation/6415f542495ba3019fb9e5da/6416030e316fa62b564936d2
+POST {{baseUrl}}/{{urlPath}}/event/confirmation/641a107e4cd2c302066e93af/6415f542495ba3019fb9e5da
 Content-Type: application/json
 Accept: application/json
 withCredentials: true
@@ -18,7 +18,7 @@ withCredentials: true
     "guests": [{
         "name":"jorge",
         "surname":"Rodriguez",
-        "status":false,
+        "status":true,
         "menu":"vegetariano"
     },
     {
@@ -37,21 +37,21 @@ withCredentials: true
 }
 
 ####
-PUT {{baseUrl}}/{{urlPath}}/event/confirmation/6415f527495ba3019fb9e5d5/6415f8a97a09a68290251b3a
+PUT {{baseUrl}}/{{urlPath}}/event/confirmation/641a107e4cd2c302066e93af/6453ea1a3452fcf2598143c7
 Content-Type: application/json
 Accept: application/json
 withCredentials: true
 
 {
     "guests": [{
-        "name":"jorge",
+        "name":"luis",
         "surname":"Rodriguez",
         "status":true,
         "menu":"vegetariano",
         "_id":"6412244a452759b54141c1f5"
     },
     {
-        "name":"Ziska",
+        "name":"neli",
         "surname":"Hammerl",
         "status":true,   
         "menu":"vegetariano",
@@ -74,7 +74,7 @@ Accept: application/json
 withCredentials: true
 
 ####
-GET {{baseUrl}}/{{urlPath}}/event/guest/list
+GET {{baseUrl}}/{{urlPath}}/event/guestList/641a107e4cd2c302066e93af
 Content-Type: application/json
 Accept: application/json
 withCredentials: true

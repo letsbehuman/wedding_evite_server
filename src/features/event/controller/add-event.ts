@@ -6,11 +6,27 @@ import { eventSchema } from '@event/schemas/event.schema';
 import { IEventDocument } from '@event/interfaces/event.interface';
 import { joiValidation } from '@globals/decorators/joi-validation.decorators';
 import { eventService } from '@service/db/event.service';
+import { IUserDocument } from '@user/interfaces/user.interface';
+import { userService } from '@service/db/user.service';
 
 export class Create {
     @joiValidation(eventSchema)
     public async event(req: Request, res: Response): Promise<void> {
-        const { title, nameOne, nameTwo, date, time, locations, contact, message } = req.body;
+        const {
+            title,
+            nameOne,
+            nameTwo,
+            date,
+            time,
+            locations,
+            contact,
+            message,
+            image,
+            menus,
+            gifts,
+            dressCode,
+            childPolicy
+        } = req.body;
         const eventObjectId: ObjectId = new ObjectId();
 
         // if (req.currentUser!.hasEvent === true) {
@@ -28,6 +44,11 @@ export class Create {
             locations,
             contact,
             message,
+            image,
+            menus,
+            gifts,
+            dressCode,
+            childPolicy,
             createdAt: new Date(),
             guestCount: 0
         } as IEventDocument;

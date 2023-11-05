@@ -8,9 +8,14 @@ const eventSchema: Schema = new Schema({
     nameTwo: { type: String },
     date: { type: String },
     time: { type: String },
-    contact: { type: Object },
-    locations: { type: Object },
+    contact: { type: Array },
+    locations: { type: Array },
     message: { type: String },
+    image: { type: String },
+    menus: { type: Array },
+    gifts: { type: Array },
+    dressCode: { type: String },
+    childPolicy: { type: Boolean },
     createdAt: { type: Date, default: Date.now },
     guestCount: { type: Number, default: 0 }
 });

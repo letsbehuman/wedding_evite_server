@@ -11,6 +11,7 @@ export class CurrentUser {
         const existingUser: IUserDocument = await userService.getUserById(
             `${req.currentUser!.userId}`
         );
+        console.log(req.currentUser);
         if (Object.keys(existingUser).length) {
             isUser = true;
             token = req.session?.jwt;
