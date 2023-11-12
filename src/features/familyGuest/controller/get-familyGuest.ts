@@ -5,7 +5,8 @@ import HTTP_STATUS from 'http-status-codes';
 
 export class GetFamilyGuests {
     public async familyInvite(req: Request, res: Response): Promise<void> {
-        const { eventId, familyId } = req.params;
+        const { familyId } = req.params;
+        console.log(13.1, { familyId });
         const family = await familyGuestService.getFamilyById(familyId);
         res.status(HTTP_STATUS.OK).json({ family });
     }

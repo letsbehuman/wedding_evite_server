@@ -2,25 +2,29 @@
 @urlPath = api/v1
 
 ####
-POST {{baseUrl}}/{{urlPath}}/event/family/641a107e4cd2c302066e93af
+POST {{baseUrl}}/{{urlPath}}/event/family/654fea041301eecb58d5c3a0
 Content-Type: application/json
 Accept: application/json
 withCredentials: true
 
-{
-    "guests": [{
-        "name":"jorge",
-        "surname":"Rodriguez"
-    }, 
-     {
-        "name":"ziska",
-        "surname":"hammerl"
-    }],
-    "extraGuestPermission":true
-}
+[
+    {
+        "guests": [
+            {
+                "name":"jorge",
+                "surname":"Rodriguez"
+            }, 
+            {
+                "name":"ziska",
+                "surname":"hammerl"
+            }
+        ],
+        "extraGuestPermission":true
+    }
+]
 
 ####
-GET {{baseUrl}}/{{urlPath}}/event/confirmation/6453ea1a3452fcf2598143c7
+GET {{baseUrl}}/{{urlPath}}/event/confirmation/654fea041301eecb58d5c3a0/654fefb40e7b7e8aab0b4476
 Content-Type: application/json
 Accept: application/json
 withCredentials: true

@@ -16,14 +16,12 @@ withCredentials: true
     "contact":
     [
         {
-            "id":15648614,
         "title":"Dama de honor",
         "name":"Erika",
         "phone":"477 117 4589",
         "inChargeOf":"Logistica"
         },
        {
-        "id":15648624,
         "title":"Mejor amigo",
         "name":"Juan",
         "phone":"477 117 4589",
@@ -33,7 +31,6 @@ withCredentials: true
     "locations":
     [
        {
-        "id":15648664,
         "title":"Ceremonia religiosa",
         "name":"Iglesia de la parroquia",
         "image":"",
@@ -41,7 +38,7 @@ withCredentials: true
         "time":"14:00",
         "address":"Calle 50 Centro"
         },
-  	    {"id":15648663,
+  	    {
         "title":"Festejo",
         "name":"",
         "image":"",
@@ -50,7 +47,6 @@ withCredentials: true
         "address":"Calle 1250 Centro"
         },
         {
-            "id":15648662,
         "title":"Festejo",
         "name":"",
         "image":"",
