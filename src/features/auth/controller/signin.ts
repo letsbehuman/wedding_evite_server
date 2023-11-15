@@ -13,8 +13,8 @@ import { config } from '@root/config/config';
 export class SignIn {
     @joiValidation(signinSchema)
     public async read(req: Request, res: Response): Promise<void> {
-        const { username, password } = req.body;
-        const existingUser: IAuthDocument = await authService.getAuthUserByUsername(username);
+        const { email, password } = req.body;
+        const existingUser: IAuthDocument = await authService.getAuthUserByEmail(email);
         if (!existingUser) {
             throw new BadRequestError('Invalid credentials');
         }
