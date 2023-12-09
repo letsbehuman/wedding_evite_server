@@ -15,8 +15,8 @@ export default (app: Application) => {
         app.use(BASE_PATH, guestListRoutes.routes());
         // app.use(BASE_PATH, eventRoutes.publicRoutes());
 
+        app.use(BASE_PATH, familyGuestListRoutes.routes());
         app.use(BASE_PATH, authMiddleware.verifyUser, eventRoutes.routes());
-        app.use(BASE_PATH, authMiddleware.verifyUser, familyGuestListRoutes.routes());
         app.use(BASE_PATH, authMiddleware.verifyUser, currentUserRoutes.routes());
     };
 

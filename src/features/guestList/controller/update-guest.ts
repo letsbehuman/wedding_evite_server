@@ -14,10 +14,8 @@ export class UpdateGuest {
         const { guests } = req.body;
         const { familyId, eventId } = req.params;
         const checkIsConfirm: IFamilyDocument = await familyGuestService.getFamilyById(familyId);
-        if (checkIsConfirm.isConfirmed) {
-            throw new BadRequestError(
-                'You have already confirm, get in contact to modify a request'
-            );
+        if (checkIsConfirm.extraGuestPermission === false) {
+            throw new BadRequestError('You do not have permission to add extra guests');
         }
         let guestsConfirmation = [];
         for (let guest of guests) {
@@ -25,7 +23,7 @@ export class UpdateGuest {
                 _id: guest._id,
                 eventId: eventId,
                 familyId: familyId,
-                name: guest.name,
+                firstName: guest.name,
                 surname: guest.suername,
                 menu: guest.menu,
                 status: guest.status

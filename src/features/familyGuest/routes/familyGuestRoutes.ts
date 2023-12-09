@@ -9,14 +9,14 @@ class FamilyGuestListRoutes {
         this.router = express.Router();
     }
     public routes(): Router {
+        this.router.get(
+            '/event/confirmation/:eventId/:familyId',
+            GetFamilyGuests.prototype.familyInvite
+        );
         this.router.post(
             '/event/family/:eventId',
             authMiddleware.checkAuthentication,
             addFamilyGuests.prototype.families
-        );
-        this.router.get(
-            '/event/confirmation/:eventId/:familyId',
-            GetFamilyGuests.prototype.familyInvite
         );
         return this.router;
     }

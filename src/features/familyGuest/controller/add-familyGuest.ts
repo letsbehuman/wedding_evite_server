@@ -13,7 +13,6 @@ export class addFamilyGuests {
         const families = req.body;
         const { eventId } = req.params;
 
-        console.log(11.1, JSON.stringify(req.body, null, 2));
         if (!Array.isArray(families)) {
             res.status(HTTP_STATUS.BAD_REQUEST).json({ message: 'Families must be an array' });
             return;
@@ -24,9 +23,11 @@ export class addFamilyGuests {
                 return {
                     _id: familyObjectId,
                     eventId,
-                    guests: family.guests,
-                    extraGuestPermission: family.extraGuestPermission,
-                    isConfirmed: false
+                    guests: family.guests.map((guest: IGuestDocument) => ({
+                        _id: new ObjectId(),
+                        ...guest
+                    })),
+                    extraGuestPermission: family.extraGuestPermission
                 } as IFamilyDocument;
             }
         );
