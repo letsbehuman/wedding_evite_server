@@ -12,7 +12,7 @@ export interface IEventDocument extends Document {
     contact: IContact[];
     locations: ILocation[];
     message?: string;
-    image: string;
+    image?: string;
     menus: string[];
     gifts: string[];
     dressCode: string;

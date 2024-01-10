@@ -8,6 +8,7 @@ import {
 import { EventModel } from '@event/models/event.model';
 import { IUserDocument } from '@user/interfaces/user.interface';
 import mongoose, { Query, UpdateQuery } from 'mongoose';
+import { AuthModel } from '@auth/models/auth.model';
 
 class EventService {
     public async addEventToDB(createdEvent: IEventDocument): Promise<void> {
@@ -27,10 +28,17 @@ class EventService {
         }).exec()) as IEventDocument;
         return event;
     }
+    //!aun no funciona esta
+    // public async getEventByUserId(userId: string): Promise<IEventDocument> {
+    //     const event: IEventDocument = (await EventModel.findOne({
+    //         userId: userId
+    //     }).exec()) as IEventDocument;
+    //     return event;
+    // }
 
     public async getEventByUserId(userId: string): Promise<IEventDocument[]> {
         const events: IEventDocument[] = await EventModel.aggregate([
-            { $match: { _id: new mongoose.Types.ObjectId(userId) } } //here userId has to be a mongodb object id
+            { $match: { userId: new mongoose.Types.ObjectId(userId) } } //here userId has to be a mongodb object id
         ]);
         return events;
     }
@@ -47,6 +55,18 @@ class EventService {
             { $set: updatedEvent }
         );
         await Promise.all([updateEvent]);
+    }
+
+    private aggregateProject() {
+        // for $project operator
+        // 1= include
+        // 0 = exclude
+        return {
+            _id: 1,
+            title: 1,
+            nameOne: 1,
+            nameTwo: 1
+        };
     }
 }
 

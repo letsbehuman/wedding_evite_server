@@ -2,15 +2,15 @@
 @urlPath = api/v1
 
 ####
-POST {{baseUrl}}/{{urlPath}}/event
+POST {{baseUrl}}/{{urlPath}}/event/65478a3fd0fabd26e932d4f5
 Content-Type: application/json
 Accept: application/json
 withCredentials: true
 
 {
     "title":"boda",
-    "nameOne":"Jorge",
-    "nameTwo":"Ziska",
+    "nameOne":"Blanca",
+    "nameTwo":"Pamela",
     "date":"29/02/2023",
     "time":"14:00",
     "contact":
@@ -64,7 +64,7 @@ withCredentials: true
 }
 
 ####
-GET {{baseUrl}}/{{urlPath}}/event/641a107e4cd2c302066e93af
+GET {{baseUrl}}/{{urlPath}}/event/6542ae77ca436fb3748cbb41
 Content-Type: application/json
 Accept: application/json
 withCredentials: true
@@ -77,15 +77,15 @@ Accept: application/json
 withCredentials: true
 
 ####
-PUT {{baseUrl}}/{{urlPath}}/event/654783efe5da298f89cff2c3
+PUT {{baseUrl}}/{{urlPath}}/event/65999f49fed9858ded521d64
 Content-Type: application/json
 Accept: application/json
 withCredentials: true
 
 {
     "title":"boda",
-    "nameOne":"Jorge",
-    "nameTwo":"Yiska",
+    "nameOne":"Blanca",
+    "nameTwo":"Pamela",
     "date":"11/11/2023",
     "time":"14:00",
     "contact":
@@ -137,6 +137,6 @@ withCredentials: true
      "message":"save the date",
     "image":"photo",
     "gifts":["liverpool.com", "amazon/wishList.com"],
-    "dressCode":["formal"],
+    "dressCode":"formal",
     "childPolicy":false
 }
