@@ -5,7 +5,7 @@ export interface IGuestDocument extends Document {
     _id?: string | ObjectId;
     eventId: string;
     familyId: string | ObjectId;
-    name: string;
+    firstName: string;
     surname?: string;
     menu: string;
     status: boolean;

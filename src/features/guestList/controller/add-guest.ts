@@ -23,7 +23,7 @@ export class AddGuest {
                 _id: guestObjectId,
                 eventId: eventId,
                 familyId: familyId,
-                name: guest.name,
+                firstName: guest.name,
                 surname: guest.surname,
                 menu: guest.menu,
                 status: guest.status

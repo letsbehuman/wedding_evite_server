@@ -6,7 +6,6 @@ export interface IFamilyDocument extends Document {
     eventId: string | ObjectId;
     guests: IGuestDocument[];
     extraGuestPermission: boolean;
-    isConfirmed: boolean;
 }
 
 export interface IGuestDocument {
